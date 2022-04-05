@@ -86,3 +86,8 @@ There is also no front end aspect to the application, it is currently just a lig
 #### Pagination
 
 There is no pagination on responses from the API. Clearly this would be a necessity in production.
+
+
+#### Docstrings / Type hints
+
+Inconsistent use of docstrings & type hints. Primarily due to time constraints.
