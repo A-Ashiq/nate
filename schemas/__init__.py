@@ -1,0 +1,1 @@
+from schemas.pages import PagePostSchema
