@@ -7,7 +7,7 @@ from core.pages.beautiful_soup_crawler import find_all_text_in_html
 
 
 class TestFindAllTextInHtml:
-    @mock.patch("core.beautiful_soup_crawler.bs4.BeautifulSoup")
+    @mock.patch("core.pages.beautiful_soup_crawler.bs4.BeautifulSoup")
     def test_beautiful_soup_parser_is_initialized_with_correct_args(
         self, mocked_beautiful_soup
     ):
@@ -30,7 +30,7 @@ class TestFindAllTextInHtml:
             markup=fake_html, features="html.parser"
         )
 
-    @mock.patch("core.beautiful_soup_crawler.bs4.BeautifulSoup")
+    @mock.patch("core.pages.beautiful_soup_crawler.bs4.BeautifulSoup")
     def test_beautiful_soup_parser_can_be_initialized_with_non_default_parser(
         self, mocked_beautiful_soup
     ):
@@ -54,7 +54,7 @@ class TestFindAllTextInHtml:
             markup=fake_html, features=fake_parser
         )
 
-    @mock.patch("core.beautiful_soup_crawler.bs4.BeautifulSoup")
+    @mock.patch("core.pages.beautiful_soup_crawler.bs4.BeautifulSoup")
     def test_beautiful_soup_parser_calls_find_all(self, mocked_beautiful_soup):
         """
         Given a mocked html
@@ -76,7 +76,7 @@ class TestFindAllTextInHtml:
         # Then
         mocked_beautiful_soup_parser.findAll.assert_called_once_with(text=True)
 
-    @mock.patch("core.beautiful_soup_crawler.bs4.BeautifulSoup")
+    @mock.patch("core.pages.beautiful_soup_crawler.bs4.BeautifulSoup")
     def test_returns_value_from_find_all(self, mocked_beautiful_soup):
         """
         Given a mocked instance of `bs4.BeautifulSoup`

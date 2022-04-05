@@ -7,8 +7,8 @@ from core.pages.beautiful_soup_crawler import scrape_text_from_target_url
 
 
 class TestScrapeTextFromPage:
-    @mock.patch("project.core.beautiful_soup_crawler.open_url")
-    def test_open_url_is_called_with_target_url(mocked_open_url):
+    @mock.patch("core.pages.beautiful_soup_crawler.open_url")
+    def test_open_url_is_called_with_target_url(self, mocked_open_url):
         """
         Given a fake target url
         When `scrape_text_from_target_url()` is called
@@ -27,10 +27,10 @@ class TestScrapeTextFromPage:
         # Then
         mocked_open_url.assert_called_once_with(fake_target_url)
 
-    @mock.patch("project.core.beautiful_soup_crawler.find_all_text_in_html")
-    @mock.patch("project.core.beautiful_soup_crawler.open_url")
+    @mock.patch("core.pages.beautiful_soup_crawler.find_all_text_in_html")
+    @mock.patch("core.pages.beautiful_soup_crawler.open_url")
     def test_find_all_text_in_html_is_called_with_correct_arg(
-        mocked_open_url, mocked_find_all_text_in_html
+        self, mocked_open_url, mocked_find_all_text_in_html
     ):
         """
         Given fake html
@@ -53,10 +53,10 @@ class TestScrapeTextFromPage:
         # Then
         mocked_find_all_text_in_html.assert_called_once_with(fake_html)
 
-    @mock.patch("project.core.beautiful_soup_crawler.filter_for_visible_text")
-    @mock.patch("project.core.beautiful_soup_crawler.open_url")
+    @mock.patch("core.pages.beautiful_soup_crawler.filter_for_visible_text")
+    @mock.patch("core.pages.beautiful_soup_crawler.open_url")
     def test_filter_for_visible_text_is_called_with_correct_arg(
-        mocked_open_url, mocked_filter_for_visible_text
+        self, mocked_open_url, mocked_filter_for_visible_text
     ):
         """
         Given fake html

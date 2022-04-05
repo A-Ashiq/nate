@@ -7,7 +7,7 @@ from core.pages.beautiful_soup_crawler import open_url
 
 
 class TestOpenURL:
-    @mock.patch("core.beautiful_soup_crawler.urllib.request")
+    @mock.patch("core.pages.beautiful_soup_crawler.urllib.request")
     def test_urllib_request_urlopen_is_called_with_the_correct_arg(
         self, mocked_urllib_request
     ):
@@ -28,7 +28,7 @@ class TestOpenURL:
         # Then
         mocked_urllib_request.urlopen.assert_called_once_with(fake_target_url)
 
-    @mock.patch("core.beautiful_soup_crawler.urllib.request")
+    @mock.patch("core.pages.beautiful_soup_crawler.urllib.request")
     def test_urllib_request_is_read_and_returned(self, mocked_urllib_request):
         """
         Given a mocked urllib request

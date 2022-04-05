@@ -8,7 +8,7 @@ from core.pages.beautiful_soup_crawler import filter_for_visible_text
 
 
 class TestFilterForVisibleText:
-    @mock.patch("core.beautiful_soup_crawler.is_tag_valid")
+    @mock.patch("core.pages.beautiful_soup_crawler.is_tag_valid")
     def test_calls_is_tag_valid_with_text(self, mocked_is_tag_valid):
         """
         Given a list of fake html text elements
