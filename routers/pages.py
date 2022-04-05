@@ -47,7 +47,7 @@ async def read_pages(db: Session = Depends(yield_db)):
     return crud.get_pages(db=db)
 
 
-examples = {
+ordering_examples = {
     "unordered": {
         "description": "No ordering will be applied to the results.",
         "value": "unordered",
@@ -70,7 +70,7 @@ async def read_page(
     page_id: int,
     ordering: Optional[str] = Query(
         "unordered",
-        examples=examples,
+        examples=ordering_examples,
         description="The ordering of which to display the results",
     ),
     db: Session = Depends(yield_db),
@@ -79,9 +79,12 @@ async def read_page(
     Retrieve the results from a page.
 
     This includes the status of the page as well as the results themselves.
+
     To order results pass one of the following strings to the `ordering` field:
-        - `alphabetical`: Returns results ranked by alphabetical order, in descending order only.
-        - `frequency`: Returns results ranked by frequency, in descending order only.
+
+    - `alphabetical`: Returns results ranked by alphabetical order, in descending order only.
+
+    - `frequency`: Returns results ranked by frequency, in descending order only.
     """
     try:
         page_model = crud.get_page_by_id(page_id=page_id, db=db)
