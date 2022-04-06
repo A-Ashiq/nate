@@ -53,5 +53,4 @@ def scrape_page(page: Page) -> None:
     """
     page_statistics = get_page_text_statistics(page.target_url)
 
-    page.key = str(uuid.uuid4())
     page.results = page_statistics
