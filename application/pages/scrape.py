@@ -6,7 +6,7 @@ from typing import Optional
 
 from sqlalchemy.orm import Session
 
-from core.pages.builder import get_page_text_statistics
+from core.pages.statistics import get_page_text_statistics
 from db.models.page import Page
 
 

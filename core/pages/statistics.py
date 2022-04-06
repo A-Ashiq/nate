@@ -4,8 +4,7 @@ This module contains functionality for scraping text from web pages
 import collections
 from typing import Callable, Dict, Iterator, List, Optional
 
-from core.pages import beautiful_soup_crawler
-from core.pages import string_utils
+from core.pages import beautiful_soup_crawler, string_utils
 
 
 def get_page_text_statistics(
