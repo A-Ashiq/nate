@@ -88,6 +88,13 @@ There is also no front end aspect to the application, it is currently just a lig
 There is no pagination on responses from the API. Clearly this would be a necessity in production.
 
 
+#### GET endpoint scalability
+
+Whilst the list `GET pages/` endpoint is not particularly scalable as of right now since all results 
+for each page are returned in the response. In production I would probably consider only showing full results
+for each page on the retrieve `GET pages/{page_id}`.
+
+
 #### Docstrings / Type hints
 
 Inconsistent use of docstrings & type hints. Primarily due to time constraints.
