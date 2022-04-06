@@ -97,3 +97,11 @@ Inconsistent use of docstrings & type hints. Primarily due to time constraints.
 
 Lots of config settings were hard-coded in this project. Names, port numbers etc. 
 These are the kind of things that would need to be customizable on a per environment basis (Dev, Prod, etc) 
+
+
+#### Health checker 
+
+The health checker could be more extensible. 
+And as of right now there is no probe for Redis.
+Again this was really down to time constraints. 
+In practice the redis probe would be a simple ping to a redis client.
