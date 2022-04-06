@@ -91,3 +91,9 @@ There is no pagination on responses from the API. Clearly this would be a necess
 #### Docstrings / Type hints
 
 Inconsistent use of docstrings & type hints. Primarily due to time constraints.
+
+
+#### Configuration 
+
+Lots of config settings were hard-coded in this project. Names, port numbers etc. 
+These are the kind of things that would need to be customizable on a per environment basis (Dev, Prod, etc) 
