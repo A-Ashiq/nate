@@ -6,17 +6,17 @@ from core.pages.statistics import get_page_text_statistics
 
 
 class TestGetPageTextStatistics:
-    def test_target_url_nate_landing_page(self):
+    def test_target_url_google_landing_page(self):
         """
-        Given a `target_url` of the nate landing page
+        Given a `target_url` of the google landing page
         When `get_page_text_statistics()`
-        Then "nate" is found
+        Then "google" is found
         """
         # Given
-        target_url = "https://www.nate.tech/"
+        target_url = "https://www.google.com/"
 
         # When
         page_text_statistics = get_page_text_statistics(target_url=target_url)
 
         # Then
-        assert "nate" in page_text_statistics
+        assert "Google" in page_text_statistics
